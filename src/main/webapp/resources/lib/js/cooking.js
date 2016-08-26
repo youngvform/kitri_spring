@@ -62,22 +62,22 @@
 	
 	var textureAlign = { x: 0.5, y: 0.9 };
 	var textures = [{
-	  file: 'images/cooking.jpg',
+	  file: '/kitri_spring01_co_co/resources/images/cooking.jpg',
 	  name: 'image',
 	  align: textureAlign,
 	  scale: { x: 1, y: 1 }
 	}, {
-	  file: 'images/cooking-blur.jpg',
+	  file: '/kitri_spring01_co_co/resources/images/cooking-blur.jpg',
 	  name: 'blur',
 	  align: textureAlign,
 	  scale: { x: 0.8, y: 0.8 }
 	}, {
-	  file: 'images/cooking-maps.jpg',
+	  file: '/kitri_spring01_co_co/resources/images/cooking-maps.jpg',
 	  name: 'maps',
 	  align: textureAlign,
 	  scale: { x: 0.05, y: 0.05 }
 	}, {
-	  file: 'images/noise.png',
+	  file: '/kitri_spring01_co_co/resources/images/noise.png',
 	  name: 'noise',
 	  repeat: true,
 	  fill: false

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.*"%>
 <% String cp = request.getContextPath(); %>
+<% System.out.print("cp = "+cp); %>
 
                 <!-- navbar -->
                 <nav class="navbar navbar-default" id="custom_navbar">
@@ -201,8 +202,8 @@
                                                                                 <div class="control-group">
                                                                                         <label class="control-label" for="confirmsignup"></label>
                                                                                         <div class="controls">
-                                                                                        		<input id="findpw" name="findpw" type="button" class="btn btn-success" value="비밀번호 전송"/>
                                                                                         		
+                                                                                        		<button id="findpw" "name="findpw" class="btn btn-success" >비밀번호 전송</button>
                                                                                                 
                                                                                         </div>
                                                                                 </div>

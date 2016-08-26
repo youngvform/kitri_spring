@@ -19,6 +19,10 @@
 		INSERT INTO MEMBER(EMAIL, PASSWORD, NAME) VALUES(#{param1},#{param2},#{param3})
 	</insert>
 	
+	<delete id="deleteID">
+		DELETE FROM MEMBER WHERE EMAIL=#{param1}
+	</delete>
+	
 	<insert id="writeDao">
 		INSERT INTO BOARD (MID, MWRITER, MCONTENT) VALUES (BOARD_SEQ.NEXTVAL, #{param1}, #{param2})
 	</insert>

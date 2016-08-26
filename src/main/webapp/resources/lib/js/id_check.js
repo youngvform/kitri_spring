@@ -1,5 +1,5 @@
 
-
+//컨텍스트 패스인 /kitri_spring01_co_co 받아오기
 function getContextPath(){
     var offset=location.href.indexOf(location.host)+location.host.length;
     var ctxPath=location.href.substring(offset,location.href.indexOf('/',offset+1));
@@ -124,7 +124,7 @@ function valuesend(){
                                            //새창의 타겟과 크기 같은 옵션을 지정
 
 	document.frm.target ="value";             //새창에서 지정한 value옵션으로 타겟을 지정
-	document.frm.action=getContextPath()+"/sendvalue"; 
+	document.frm.action=getContextPath()+"/sendmail"; 
 	document.frm.method="post";//새창으로 띄울 jsp
 	document.frm.submit();
 	
@@ -199,8 +199,3 @@ function signin(){
 	document.infrm.submit();
 }
 
-function singout(){
-	document.frm.action=getContextPath()+"/sign_out"; 
-	document.frm.method="post";//새창으로 띄울 jsp
-	document.frm.submit();
-}
