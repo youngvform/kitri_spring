@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kitri.project01.dao.IDao">
+	<select id="listDao" resultType="com.kitri.project01.dto.MemberDto">
+		SELECT * FROM BOARD ORDER BY MID DESC
+	</select>
+	
+	<select id="sign_in" resultType="com.kitri.project01.dto.MemberDto">
+		SELECT * FROM MEMBER WHERE EMAIL=#{param1} AND PASSWORD=#{param2}
+	</select>
+	<select id="find_pw" resultType="com.kitri.project01.dto.MemberDto">
+		SELECT * FROM MEMBER WHERE EMAIL=#{param1}
+	</select>
+	
+	<insert id="sign_up">
+		INSERT INTO MEMBER(EMAIL, PASSWORD, NAME) VALUES(#{param1},#{param2},#{param3})
+	</insert>
+	
+	<insert id="writeDao">
+		INSERT INTO BOARD (MID, MWRITER, MCONTENT) VALUES (BOARD_SEQ.NEXTVAL, #{param1}, #{param2})
+	</insert>
+	
+	
+	<delete id="deleteDao">
+		DELETE FROM BOARD WHERE MID = #{param1}
+	</delete>
+	
+	
+</mapper>
