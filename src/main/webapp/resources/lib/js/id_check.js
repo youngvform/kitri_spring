@@ -176,6 +176,7 @@ $(document).ready(function(){
     		}
     });
 });
+
 /*
 $(document).ready(function(){
     $("#findpw").click(function(){
