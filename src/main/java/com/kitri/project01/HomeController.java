@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -192,6 +194,41 @@ public class HomeController {
         return "redirect:index";
     }
 	
+	@RequestMapping(value="/check_id", method=RequestMethod.POST)
+    public void checkID (HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("check_id() start");
+
+		MemberDto dto;
+		String e_mail=request.getParameter("email");
+		IDao dao = sqlSession.getMapper(IDao.class);
+
+		dto=dao.check_id(e_mail);
+
+		String id = dto.getEmail();
+		System.out.println("email = "+id);
+
+		if(id != null) {
+			JSONObject obj = new JSONObject();
+			obj.put("result", "true");
+			response.setContentType("application/x-json; charset=UTF-8");
+			response.getWriter().print(obj);
+			
+		}else{
+			JSONObject obj = new JSONObject();
+			obj.put("result", "false");
+			response.setContentType("application/x-json; charset=UTF-8");
+			response.getWriter().print(obj);	
+		}
+
+		
+        
+   
+       
+    }
+		
+		
+		
+		
 	//È¸¿ø Å»Åð
 	@RequestMapping("/deleteID")
 	public String deleteID(HttpSession session){

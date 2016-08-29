@@ -134,7 +134,7 @@
                                                                                         <div class="controls">
                                                                                                 <input id="email" name="email" onkeyup="idCheck()" class="form-control" type="email"  placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
                                                                                       
-                                                                                                
+                                                                                                <button id="confirmsignup"  name="confirmsignup" class="btn btn-success" onclick="idCheck()" >ddd</button>
                                                                                                 <input id="mailcode2" name="mailcode2" type="button" class="btn btn-success" value="인증코드 발송"/>
                                                                                                 &nbsp;&nbsp;&nbsp;<span id="result" style="color: BLUE;"> </span>
                                                                                        			<input id="vaildmail" name="vaildmail" class="form-control" type="text" placeholder="발송 버튼을 눌러주세요." class="input-large" required="">

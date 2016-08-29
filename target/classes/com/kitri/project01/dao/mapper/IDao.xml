@@ -15,6 +15,10 @@
 		SELECT * FROM MEMBER WHERE EMAIL=#{param1}
 	</select>
 	
+	<select id="check_id" resultType="com.kitri.project01.dto.MemberDto">
+		SELECT * FROM MEMBER WHERE EMAIL=#{param1}
+	</select>
+	
 	<insert id="sign_up">
 		INSERT INTO MEMBER(EMAIL, PASSWORD, NAME) VALUES(#{param1},#{param2},#{param3})
 	</insert>

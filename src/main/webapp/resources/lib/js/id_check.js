@@ -11,11 +11,12 @@ function getContextPath(){
 /*아이디 중복 실시간 체크*/
 var x;
 function idCheck() {
-	var uid = document.getElementById("email").value;
+	var uid = document.getElementById("email").val();
+	console.log(uid);
 	var para = 'email='+uid;	
 	$.ajax({
 		type:"POST",
-		url:"/idcheck",		
+		url: getContextPath()+"/check_id",		
 		data: para,
 		dataType : "json",
 		success:function(data)
@@ -31,6 +32,27 @@ x=1;
 		}		
 	});
 }
+
+
+if($("#email").val() != ""){
+    $("#email").keyup();
+};
+
+
+$("#email").keyup(function(){
+    $.post(getContextPath()+"/check_id"
+            ,{"email" : $("#email").val()}
+            , function(data){
+            console.log(data);
+        
+        if(data =="true"){
+            $("#result").text("이미사용중인 아이디입니다.")
+        }else{
+            $("#result").text("사용가능한 아이디입니다.")
+        }
+    });
+})
+
 
 /* 중복일때 버튼 막기, 아니면 회원가입 */
 
