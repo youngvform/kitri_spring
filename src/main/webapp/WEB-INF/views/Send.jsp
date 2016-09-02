@@ -9,7 +9,7 @@
 </head>
 <body>
 <center>
-	<h4><%=request.getAttribute("msg") %></h4>
+	<h4>${result}</h4>
 	<button style="align:center" id="confirmsignup" name="confirmsignup" onclick="window.open('','_self').close();" class="btn btn-default">Close</button>
 </center>
 </body>

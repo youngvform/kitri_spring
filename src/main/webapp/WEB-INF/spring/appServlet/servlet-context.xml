@@ -15,15 +15,18 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		
 	</beans:bean>
-
+	
+	
+	
 	<context:component-scan base-package="com.kitri.project01" />
 
 	<!-- 데이터소스 -->
@@ -72,11 +75,13 @@
 	</beans:bean>
 
 
-	<!-- json -->
+	<!-- json
 	<beans:bean id="jsonView"
 		class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
 		<beans:property name="contentType" value="application/json;charset=UTF-8">
 		</beans:property>
-	</beans:bean>
+	</beans:bean> -->
+	
+	<beans:bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 
 </beans:beans>

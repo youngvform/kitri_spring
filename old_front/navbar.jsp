@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.*"%>
 <% String cp = request.getContextPath(); %>
-<% System.out.print("cp = "+cp); %>
+<% System.out.println("cp = "+cp); %>
 
                 <!-- navbar -->
                 <nav class="navbar navbar-default" id="custom_navbar">
@@ -88,7 +88,7 @@
                                         <div class="modal-body">
                                                 <div id="myTabContent" class="tab-content">
                                                         <div class="tab-pane fade active in" id="signin">
-                                                                <form name="infrm" method="post" action="<%=cp%>/sign_in" class="form-horizontal" >
+                                                                <form method="post" action="<%=cp%>/sign_in" class="form-horizontal" >
                                                                
                                                                         <!-- Sign In Form -->
                                                                         <fieldset>
@@ -121,20 +121,20 @@
                                                                         </fieldset>
                                                                 </form>
                                                         </div>
-                                                        
-                                                        
 
+
+									
                                                         <div class="tab-pane fade" id="signup">
-                                                                <form name="frm" class="form-horizontal"  method="post" onkeydown="return captureReturnKey(event)">
+                                                                <form class="form-horizontal"  method="post" action="<%=cp%>/sign_up" onkeydown="return captureReturnKey(event)">
                                                                         <!-- Sign Up Form -->
                                                                         <fieldset>
                                                                                 <!-- Text input-->
                                                                                 <div class="control-group">
                                                                                         <label class="control-label" for="email">Email:</label>
                                                                                         <div class="controls">
-                                                                                                <input id="email" name="email" onkeyup="idCheck()" class="form-control" type="email"  placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                                                                                                <input id="email" name="email" onkeyup="test()" class="form-control" type="email"  placeholder="JoeSixpack@sixpacksrus.com" class="input-large"  required="">
                                                                                       
-                                                                                                <button id="confirmsignup"  name="confirmsignup" class="btn btn-success" onclick="idCheck()" >ddd</button>
+                                                                                                
                                                                                                 <input id="mailcode2" name="mailcode2" type="button" class="btn btn-success" value="인증코드 발송"/>
                                                                                                 &nbsp;&nbsp;&nbsp;<span id="result" style="color: BLUE;"> </span>
                                                                                        			<input id="vaildmail" name="vaildmail" class="form-control" type="text" placeholder="발송 버튼을 눌러주세요." class="input-large" required="">
@@ -176,7 +176,7 @@
                                                                                         <label class="control-label" for="confirmsignup"></label>
                                                                                         <div class="controls">
                                                                                         
-                                                                                                <button id="confirmsignup"  name="confirmsignup" class="btn btn-success" onclick="signin()" >Sign Up</button>
+                                                                                                <button id="confirmsignup"  name="confirmsignup" class="btn btn-success">Sisdsdsdsdsdsdsdgn Up</button>
                                                                                         </div>
                                                                                 </div>
                                                                                 <br/>

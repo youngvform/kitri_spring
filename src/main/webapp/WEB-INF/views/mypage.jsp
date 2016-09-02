@@ -1,28 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.*"%>
-<% String cp = request.getContextPath(); %>
-
-<% 
-					String userId="";
-					//session = request.getAttribute("ses");
-					int check;
-					userId =(String)session.getAttribute("userId");
-					if(userId==null||userId.equals("")){
-						check=0;
-					}else{
-						check=1; //session 있을 때,
-					}
-					if(check==0){
-%>
-<%}else{%>
-
-<%}%>
-
-<% if(check==0){%>
-
-<%}else{%>
-
-<%}%>
 <!DOCTYPE html>
   <html>
     <head>
@@ -30,7 +7,7 @@
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="<%=cp%>/resources/css/materialize.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -39,11 +16,9 @@
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="<%=cp%>/resources/js/materialize.js"></script>
-      <script type="text/javascript" src="<%=cp%>/resources/js/myb.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/myb.js"></script>
     
-    <script src="<%=cp%>/resources/js/id_check.js"></script>
-    	
     <!-- 네비게이션 시작-->
     <nav>
       <div class="nav-wrapper">
@@ -62,54 +37,42 @@
     </nav>
     <!-- 네비게이션 끝 -->
 
-    <!-- 슬라이더 시작 -->
-    <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="<%=cp%>/resources//img/banner_img_1.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>첫번째 배너 타이틀</h3>
-          <h5 class="light grey-text text-lighten-3">첫번째 배너 서브 타이틀</h5>
-        </div>
-      </li>
-      <li>
-        <img src="<%=cp%>/resources//img/banner_img_1.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>두번째 배너 타이틀</h3>
-          <h5 class="light grey-text text-lighten-3">두번째 서브 타이틀</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>세번째 배너 타이틀</h3>
-          <h5 class="light grey-text text-lighten-3">세번째 서브 타이틀</h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>네번째 타이틀</h3>
-          <h5 class="light gre번y-text text-lighten-3">네번째 서브 타이틀</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- 슬라이더 끝 -->
-  
   <div class="container">
-  
-  <!-- 명예의 전당 시작 -->
-  
-  
-  <span class="black-text left-align">명예의 전당</span>
+
+  <!-- 프로필 영역 시작 -->
+   <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="img/profile.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <h5>쉐프명</h5>
+              <p>hello@hello.com</p>
+              <p><a href="#">회원정보 수정</a></p>
+              <p><a href="#">비밀번호 변경</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- 프로필 영역 끝 -->
+  <!-- Tab 시작 -->
   <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#myrecipecard">나의 레시피</a></li>
+        <li class="tab col s3"><a class="" href="#favoritereipecard">스크랩 레시피</a></li>
+      </ul>
+    </div>
+    
+    <div id="myrecipecard" class="col s12">
+      <div class="row">
   <!-- card no 1 start -->
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj2.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj2.jpg">
+          <span class="card-title">나의 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 322개</p>
@@ -125,8 +88,8 @@
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj1.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj1.jpg">
+          <span class="card-title">나의 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 312개</p>
@@ -142,8 +105,8 @@
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj2.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj2.jpg">
+          <span class="card-title">나의 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 123개</p>
@@ -159,8 +122,8 @@
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj1.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj1.jpg">
+          <span class="card-title">나의 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 43개</p>
@@ -172,17 +135,19 @@
     </div>
   <!-- card no 4 end -->
   </div>
-  <!-- 명예의 전당 끝 -->
+  </div>
+  <!-- 나의 레시피 컨텐츠 끝-->
   
-  <!-- HOT 레시피 시작 -->
-  <span>HOT 레시피</span>
+
+  <!-- 스크랩 레시피 컨텐츠 시작 -->
+  <div id="favoritereipecard" class="col s12">
   <div class="row">
   <!-- card no 1 start -->
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj2.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj2.jpg">
+          <span class="card-title">스크랩 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 322개</p>
@@ -198,8 +163,8 @@
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj1.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj1.jpg">
+          <span class="card-title">스크랩 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 312개</p>
@@ -215,8 +180,8 @@
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj2.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj2.jpg">
+          <span class="card-title">스크랩 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 123개</p>
@@ -232,8 +197,8 @@
     <div class="col s12 m3">
       <div class="card small hoverable">
         <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj1.jpg">
-          <span class="card-title">Card Title</span>
+          <img src="img/bj1.jpg">
+          <span class="card-title">스크랩 레시피</span>
         </div>
         <div class="card-content">
           <p>좋아요 43개</p>
@@ -245,84 +210,14 @@
     </div>
   <!-- card no 4 end -->
   </div>
-  <!-- HOT 레시피 끝 -->
-
-<!-- 최근 레시피 시작 -->
-  <span>최근 레시피</span>
-  <div class="row">
-  <!-- card no 1 start -->
-    <div class="col s12 m3">
-      <div class="card small hoverable">
-        <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj2.jpg">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>좋아요 322개</p>
-        </div>
-        <div class="card-action">
-          <a href="#">BJ닉네임</a>
-        </div>
-      </div>
-    </div>
-  <!-- card no 1 end -->
-
-  <!-- card no 2 start -->
-    <div class="col s12 m3">
-      <div class="card small hoverable">
-        <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj1.jpg">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>좋아요 312개</p>
-        </div>
-        <div class="card-action">
-          <a href="#">BJ닉네임</a>
-        </div>
-      </div>
-    </div>
-  <!-- card no 2 end -->
-
-  <!-- card no 3 start -->
-    <div class="col s12 m3">
-      <div class="card small hoverable">
-        <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj2.jpg">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>좋아요 123개</p>
-        </div>
-        <div class="card-action">
-          <a href="#">BJ닉네임</a>
-        </div>
-      </div>
-    </div>
-  <!-- card no 3 end -->
-
-  <!-- card no 4 start -->
-    <div class="col s12 m3">
-      <div class="card small hoverable">
-        <div class="card-image">
-          <img src="<%=cp%>/resources/img/bj1.jpg">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>좋아요 43개</p>
-        </div>
-        <div class="card-action">
-          <a href="#">BJ닉네임</a>
-        </div>
-      </div>
-    </div>
-  <!-- card no 4 end -->
   </div>
-  <!-- 최근 레시피 끝 -->
+  <!-- 스크랩 레시피 컨텐츠 끝 -->
+
+</div>
   </div>
 
 
-  <!-- 모달 영역 시작 -->
+<!-- 모달 영역 시작 -->
   <!-- 로그인 모달 시작 -->
   <!-- Modal Structure -->
   <div id="loginmodal" class="modal">
@@ -349,51 +244,40 @@
 
 <!-- 로그인 모달 끝 -->
 
-
 <!-- 회원가입 모달  -->
 <div id="registermodal" class="modal">
     <div class="modal-content">
-    <form name="frm" method="post" class="form-horizontal">
+    <form>
       <h4>회원가입</h4>
        <div class="row">
         <div class="input-field col s12">
-          <input id="email" name="email" type="email" class="validate" />
+          <input id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div> 
-        
-        
-			<input id="mailcode2" name="mailcode2" type="button" class="btn btn-success" value="인증코드 발송" onclick="valuesend()"/>
 
+            <button class="btn waves-effect waves-light right" type="submit" name="action">이메일 인증
+                <i class="material-icons right">send</i>
+            </button>
 
-		<div class="input-field col s12">
-          <input id="valid-value" name="valid-value" type="text" class="validate">
-          <label for="name">인증 코드</label>
-        </div> 
-        
         <div class="input-field col s12">
-          <input id="name" name="name" type="text" class="validate">
+          <input id="name" type="text" class="validate">
           <label for="name">name</label>
         </div>  
         <div class="input-field col s12">
-          <input id="password" name="password" type="password" class="validate">
+          <input id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
         <div class="input-field col s12">
-          <input id="repass" name="repass" type="password" class="validate">
-          <label for="repass">Re-EnterPassword</label>
+          <input id="password" type="password" class="validate">
+          <label for="password">Re-EnterPassword</label>
         </div>
       </div>
 
     
     <div class="modal-footer">
-    
-    <input id="confirmsignup" name="confirmsignup" type="button" class="btn btn-success" value="확인" onclick="sign_up()"/>
-
-    
-   
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">확인</a>
     </div>
 
- 			
      </form>
   </div>
 </div>
@@ -401,8 +285,12 @@
 <!-- 회원가입 모달 끝 -->
 
 
-    </body>
-    <footer class="page-footer">
+
+
+
+  </body>
+ 
+        <footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -427,4 +315,6 @@
             </div>
           </div>
         </footer>
+
+
   </html>
